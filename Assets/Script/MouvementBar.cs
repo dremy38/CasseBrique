@@ -10,15 +10,15 @@ namespace Assets.Script
     public class MouvementBar : MonoBehaviour {
 
         // Déclaration de la variable de vitesse
-        public float m_speed = 0.1f;
+        public float m_speed = 0.1f; // px/sec
         private bool _collisionDetected = false;
-        private Vector3 move;
+        private Vector3 movement;
        
 
         // Use this for initialization
         void Start ()
         {
-            
+            movement = new Vector3(0f, 0f, 0f);
         }
     
         // Update is called once per frame
@@ -26,17 +26,17 @@ namespace Assets.Script
         {
             if (!_collisionDetected)
             {
-                transform.position = transform.position + new Vector3(0.0f, 0.0f, 0.0f);
-                move = new Vector3();
+                //transform.position = transform.position + new Vector3(0.0f, 0.0f, 0.0f);
+                movement.x = 0f;
 
                 // Récupération des touches gauche et droite
                 if (Input.GetKey(KeyCode.LeftArrow) && !this._collisionDetected)  //43
-                    move.x -= m_speed;
+                    movement.x -= m_speed;
                 if (Input.GetKey(KeyCode.RightArrow) && !this._collisionDetected)
-                    move.x += m_speed;
+                    movement.x += m_speed;
 
                 // On applique le mouvement à l'objet
-                transform.position += move;
+                transform.position += movement;
                 //Debug.Log(transform.position.x); 
             }
            

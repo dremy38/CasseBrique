@@ -22,7 +22,7 @@ namespace Assets.Script
 
         public void NewGame()
         {
-#if UNITY_EDITOR
+//#if UNITY_EDITOR
             //UnityEngine.SceneManagement.SceneManager.LoadScene("Jeu");
             //UnityEngine.SceneManagement.SceneManager.UnloadScene("MenuPrincipale");
 
@@ -30,7 +30,7 @@ namespace Assets.Script
             
 
 
-#endif
+//#endif
         }
     }
 
